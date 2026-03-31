@@ -57,8 +57,8 @@
     for working with data structures and algorithms. This can lead to more readable
     and concise code, making your programs easier to understand and maintain.
 
-    🔶 Community and Resources: STL has a vast user community, which means there are
-    numerous tutorials, books, and online resources available to help you learn and
+    🔶 Community and Rexs: STL has a vast user community, which means there are
+    numerous tutorials, books, and online rexs available to help you learn and
     use it effectively. You can tap into this wealth of knowledge to improve
     your C++ programming skills.
 */
@@ -114,9 +114,3 @@
         the same type, including their sizes and capacities.
 */
 
-#include <iostream>
-using namespace std;
-
-int main(){
-    return 0;
-}
