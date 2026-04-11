@@ -94,10 +94,16 @@ public:
     Three Types of Constructors.
     1. Non-parameterized 
     2. Parameterized
-    3. Copy Constructor
         this is a special pointer in C++ that points to the current object.
         this->prop is same as *(this).prop
+    3. Copy Constructor
+        Special Constructor (default) used to copy properties of none object into another.
     Constructor Overloading => multiple constructor in the class with diff parameter.
+    Two Types of Object Copy happend in C++
+    Shallow & Deep Copy
+    A shallow copy of an object copies all of the member values from one object to another.
+    A deep copy, on the other hand, not only copies the member values but also makes copies of
+    any dynamically allocated memory that the members point to.
 */
 
 class Teacher {
@@ -106,21 +112,31 @@ private:
 public:
     //  Constructor --> Always in Public
     Teacher(){ // Non-parameterized
-        cout << "Hi, I am constructor.\n";
+        cout << "I am non-parameterized constructor.\n";
         dept = "CSE";
     }
-    Teacher(string n, string d, string s, double sal){  // parameterized
-        name = n;
-        dept = d;
-        subject = s;
-        salary = sal;
-    }
-    // Teacher(string name, string dept, string subject, double salary){  // copy
-    //     this->name = name;
-    //     this->dept = dept;
-    //     this->subject = subject;
-    //     this->salary = salary;
+    // Teacher(string n, string d, string s, double sal){  // parameterized
+    //     cout << "I am parameterized constructor.\n";
+    //     name = n;
+    //     dept = d;
+    //     subject = s;
+    //     salary = sal;
     // }
+    Teacher(string name, string dept, string subject, double salary){  // parameterized
+        cout << "I am parameterized constructor.\n";
+        this->name = name;
+        this->dept = dept;
+        this->subject = subject;
+        this->salary = salary;
+    }
+    //  Copy Constructor
+    Teacher(Teacher &obgObj){   // pass by reference
+        cout << "I am custom copy constructor.\n";
+        this->name = obgObj.name;
+        this->dept = obgObj.dept;
+        this->subject = obgObj.subject;
+        this->salary = obgObj.salary;
+    }
     string name;
     string dept;
     string subject;
@@ -138,8 +154,10 @@ public:
 
 int main(){
     Teacher t1 ("Shradha", "CSE", "C++", 25000);
+    Teacher t2(t1);
     // t1.name = "Sadia";
     // cout << t1.dept << endl;
-    t1.getInfo();
+    // t1.getInfo();
+    t2.getInfo();
     return 0;
 }
