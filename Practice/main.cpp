@@ -1,27 +1,15 @@
 #include <iostream>
-using namespace std;
 
-int main()
-{
-    // Our first fraction
-    int num1 {};
-    int den1 {};
+int main() {
+    int size;
+    std::cin >> size;
 
-    // Our second fraction
-    int num2 {};
-    int den2 {};
-
-    // Used to eat (remove) the slash between the numerator and denominator
-    char ignore {};
-
-    cout << "Enter a fraction: ";
-    cin >> num1 >> ignore >> den1;
-
-    cout << "Enter a fraction: ";
-    cin >> num2 >> ignore >> den2;
-
-    cout << "The two fractions multiplied: "
-        << num1 * num2 << '/' << den1 * den2 << '\n';
-
+    float arr[size];
+    for(int i=0; i<size; i++){
+        std::cin >> arr[i];
+    }
+    for(auto val : arr){
+        std::cout << val << " ";
+    }
     return 0;
 }
