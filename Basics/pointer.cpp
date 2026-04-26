@@ -55,16 +55,19 @@ int main(){
     //  Introduction to Pointer
     // int n = 5;
     // cout << &n << endl;
+    // Creating a pointer
     // int *ptr = &n;
     // cout << ptr << endl;
+    // Accessing the value of a pointer
     // cout << *ptr << endl;
+    // Changing the value of a pointer
     // *ptr = 10;
     // cout << *ptr << endl;
     // cout << n << endl;
-
+    // Pointer should be same type where its point to.
     // float x = 6;
     // float *ptrX = &x;
-
+    // Don't try to point such a location that's not created
     // int *ptr2;   //  ERROR
     // *ptr2 = 7;
 
@@ -83,7 +86,7 @@ int main(){
 
     //  Pointer & Array
     // int luckyNumbers[5] = {1,2,3,4,5};
-    // cout << luckyNumbers << endl;
+    // cout << luckyNumbers << endl;    //  Address of 1st element
     // cout << &luckyNumbers[0] << endl;
     // cout << luckyNumbers[2] << endl;
     // cout << *(luckyNumbers+2) << endl;
@@ -102,10 +105,37 @@ int main(){
     int numbers[5] = {6,3,5,-1,25};
     // cout << getMin(numbers, 5) << endl;
     // cout << getMax(numbers, 5) << endl;
-    int min = numbers[0];
-    int max = numbers[0];
-    getMinMax(numbers, 5, &min, &max);
-    cout << min << " & " << max << endl;
+    // int min = numbers[0];
+    // int max = numbers[0];
+    // getMinMax(numbers, 5, &min, &max);
+    // cout << min << " & " << max << endl;
+
+
+
+
+    // Dynamic Array using Pointer
+    int size;
+    cout << "Enter array size: ";
+    cin >> size;
+
+    // int arrays[size];   
+    /*  It is risky because Stack memory is very small.
+        If a user enters a large number for size,
+        your program will suffer a Stack Overflow and crash instantly.
+    */
+    int* array = new int [size];
+
+    for(int i=0; i<size; i++){
+        cin >> array[i];
+    }
+    for(int i=0; i<size; i++){
+        // cout << array[i] << " ";
+        cout << *(array + i) << " ";
+    }
+    
+    delete[] array;
+    array = NULL;
+    
 
     // system("pause>0");
     return 0;
