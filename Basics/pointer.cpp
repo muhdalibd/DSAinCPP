@@ -102,7 +102,7 @@ int main(){
 
 
     //  Function using Pointer
-    int numbers[5] = {6,3,5,-1,25};
+    // int numbers[5] = {6,3,5,-1,25};
     // cout << getMin(numbers, 5) << endl;
     // cout << getMax(numbers, 5) << endl;
     // int min = numbers[0];
@@ -114,27 +114,61 @@ int main(){
 
 
     // Dynamic Array using Pointer
-    int size;
-    cout << "Enter array size: ";
-    cin >> size;
+    // int size;
+    // cout << "Enter array size: ";
+    // cin >> size;
 
     // int arrays[size];   
     /*  It is risky because Stack memory is very small.
         If a user enters a large number for size,
         your program will suffer a Stack Overflow and crash instantly.
     */
-    int* array = new int [size];
+    // int* array = new int [size];
 
-    for(int i=0; i<size; i++){
-        cin >> array[i];
-    }
-    for(int i=0; i<size; i++){
-        // cout << array[i] << " ";
-        cout << *(array + i) << " ";
-    }
+    // for(int i=0; i<size; i++){
+    //     cin >> array[i];
+    // }
+    // for(int i=0; i<size; i++){
+    //     // cout << array[i] << " ";
+    //     cout << *(array + i) << " ";
+    // }
     
-    delete[] array;
-    array = NULL;
+    // delete[] array;
+    // array = NULL;
+
+
+
+
+    // Multi-dimentional Dynamic Array using Pointer
+    // int rows, cols;
+    // cout << "rows & cols: ";
+    // cin >> rows >> cols;
+
+    // int **table = new int*[rows];
+    // for(int i=0; i<rows; i++){
+    //     table[i] = new int[cols];
+    // }
+
+    // for(int i=0; i<rows; i++){
+    //     for(int j=0; j<cols; j++){
+    //         cin >> table[i][j];
+    //     }
+    // }
+    // for(int i=0; i<rows; i++){
+    //     for(int j=0; j<cols; j++){
+    //         cout << table[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+    
+    // for(int i=0; i<rows; i++){
+    //     delete[] table[i];
+    // }
+    // delete[] table;
+    // table = NULL;
+
+
+
     
 
     // system("pause>0");
